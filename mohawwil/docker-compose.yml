@@ -1,0 +1,10 @@
+services:
+  mohawwil:
+    build: .
+    container_name: mohawwil
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./data:/app/data
+    # حد للذاكرة حتى لا يستهلك البوت السيرفر كله (عدّله حسب سيرفرك)
+    mem_limit: 1g
